@@ -7,7 +7,7 @@ void hovedside(){
   rect(width/16,height/5,width/3,height/3*2);
   textSize(50);
   textAlign(CENTER);
-  text(money,width/2,height/8);
+  //text(money,width/2,height/8);
 }
 
 void opretKnapper(){

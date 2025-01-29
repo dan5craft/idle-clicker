@@ -42,6 +42,6 @@ class Clicker{
     float cirkelSizeY = sizeY * 0.75;
     currentSizeX = lerp(currentSizeX,cirkelSizeX,0.1);
     currentSizeY = lerp(currentSizeY,cirkelSizeY,0.1);
-    ellipse(x + sizeX/2, y + sizeY/2, currentSizeX, currentSizeY);
+    circle(x + sizeX/2, y + sizeY/2, currentSizeX);
   }
 }
