@@ -29,7 +29,7 @@ class Number {
       suffix += num.suffix-suffix;
     }
     else if(num.suffix < suffix){
-      size += pow(10, (num.suffix-suffix)*3);
+      size += num.size*pow(10, (num.suffix-suffix)*3);
       fixNumber();
     }
     else{
@@ -39,7 +39,7 @@ class Number {
   }
   void Subtract(Number num) {
     if(num.suffix < suffix){
-      size -= pow(10, (num.suffix-suffix)*3);
+      size -= num.size*pow(10, (num.suffix-suffix)*3);
       fixNumber();
     }
     else{
@@ -68,7 +68,7 @@ class Number {
       copy.suffix += num.suffix-suffix;
     }
     else if(num.suffix < suffix){
-      copy.size += pow(10, (num.suffix-suffix)*3);
+      copy.size += num.size*pow(10, (num.suffix-suffix)*3);
       fixNumber();
     }
     else{
@@ -80,7 +80,7 @@ class Number {
   Number returnSubtract(Number num) {
     Number copy = new Number(size, suffix);
     if(num.suffix < suffix){
-      copy.size -= pow(10, (num.suffix-suffix)*3);
+      copy.size -= num.size*pow(10, (num.suffix-suffix)*3);
       fixNumber();
     }
     else{
