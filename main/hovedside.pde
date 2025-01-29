@@ -8,6 +8,7 @@ void hovedside(){
   textSize(50);
   textAlign(CENTER);
   //text(money,width/2,height/8);
+  text(moneyText+suffixes[suffix], width/2, height/2);
 }
 
 void opretKnapper(){
@@ -21,8 +22,11 @@ void opretKnapper(){
     .setColorActive(knapFarve)
     .onClick(new CallbackListener() {
       public void controlEvent(CallbackEvent event) {
-        if(money >= 10){
-          upgrade1num += 1;
+        if(suffix > clickUpgrade1.priceCifre || suffix == clickUpgrade1.priceCifre && money >= clickUpgrade1.price){
+          clickPower += clickUpgrade1.increase*pow(10, (clickUpgrade1.increaseCifre-suffix)*3);
+          money -= clickUpgrade1.price*pow(10, (clickUpgrade1.priceCifre-suffix)*3);
+          clickUpgrade1.price *= 1.5;
+          clickUpgrade1.fixNumbers();
         }
       }
     });
