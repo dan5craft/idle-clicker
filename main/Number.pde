@@ -19,11 +19,15 @@ class Number {
   }
   //Disse funktioner ændrer tallet
   void Add(Number num) {
-    size += num.size*pow(10, (num.suffix-suffix)*3);
+    size /= pow(10, (num.suffix-suffix)*3);
+    size += num.size;
+    suffix += num.suffix-suffix;
     fixNumber();
   }
   void Subtract(Number num) {
-    size -= num.size*pow(10, (num.suffix-suffix)*3);
+    size /= pow(10, (num.suffix-suffix)*3);
+    size -= num.size;
+    suffix += num.suffix-suffix;
     fixNumber();
   }
   void Multiply(Number num){
@@ -37,13 +41,17 @@ class Number {
   //Disse funktioner returner et tal
   Number returnAdd(Number num) {
     Number copy = new Number(size, suffix);
-    copy.size += num.size*pow(10, (num.suffix-suffix)*3);
+    copy.size /= pow(10, (num.suffix-suffix)*3);
+    copy.size -= num.size;
+    copy.suffix += num.suffix-suffix;
     copy.fixNumber();
     return copy;
   }
   Number returnSubtract(Number num) {
     Number copy = new Number(size, suffix);
-    copy.size -= num.size*pow(10, (num.suffix-suffix)*3);
+    copy.size /= pow(10, (num.suffix-suffix)*3);
+    copy.size -= num.size;
+    copy.suffix += num.suffix-suffix;
     copy.fixNumber();
     return copy;
   }
