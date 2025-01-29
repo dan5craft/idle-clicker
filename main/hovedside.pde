@@ -27,7 +27,7 @@ void opretKnapper(){
       }
     });
   upgrade2 = cp5.addButton("upgrade2")
-    .setPosition(width/16 + width/50,height/5 + height/15 + height/50 + height/50)
+    .setPosition(width/16 + width/50,height/5 + height/15 + height/50*2)
     .setSize(width/3 - width/25, height/15)
     .setFont(font)
     .setLabel("Upgrade 2")
@@ -40,7 +40,7 @@ void opretKnapper(){
       }
     });
   upgrade3 = cp5.addButton("upgrade3")
-    .setPosition(width/16 + width/50,height/5 + height/15 + height/50 + height/50 + height/15 + height/50)
+    .setPosition(width/16 + width/50,height/5 + height/15*2 + height/50*3)
     .setSize(width/3 - width/25, height/15)
     .setFont(font)
     .setLabel("Upgrade 3")
@@ -53,7 +53,7 @@ void opretKnapper(){
       }
     });
   upgrade4 = cp5.addButton("upgrade4")
-    .setPosition(width/16 + width/50,height/5 + height/15 + height/50 + height/50 + height/15 + height/50 + height/15 + height/50)
+    .setPosition(width/16 + width/50,height/5*2 + height/50*4)
     .setSize(width/3 - width/25, height/15)
     .setFont(font)
     .setLabel("Upgrade 4")
@@ -66,7 +66,7 @@ void opretKnapper(){
       }
     });
   upgrade5 = cp5.addButton("upgrade5")
-    .setPosition(width/16 + width/50,height/5 + height/15 + height/50 + height/50 + height/15 + height/50 + height/15 + height/50 + height/15 + height/50)
+    .setPosition(width/16 + width/50,height/5 + height/15*4 + height/10)
     .setSize(width/3 - width/25, height/15)
     .setFont(font)
     .setLabel("Upgrade 5")
