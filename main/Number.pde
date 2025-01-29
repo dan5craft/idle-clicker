@@ -19,43 +19,77 @@ class Number {
   }
   //Disse funktioner ændrer tallet
   void Add(Number num) {
-    size /= pow(10, (num.suffix-suffix)*3);
-    size += num.size;
-    suffix += num.suffix-suffix;
-    fixNumber();
+    if (num.suffix > suffix) {
+      if (pow(10, (num.suffix-suffix)*3) > 0) {
+        size /= pow(10, (num.suffix-suffix)*3);
+      } else {
+        size = 0;
+      }
+      size += num.size;
+      suffix += num.suffix-suffix;
+    }
+    else if(num.suffix < suffix){
+      size += pow(10, (num.suffix-suffix)*3);
+      fixNumber();
+    }
+    else{
+      size += num.size;
+      fixNumber();
+    }
   }
   void Subtract(Number num) {
-    size /= pow(10, (num.suffix-suffix)*3);
-    size -= num.size;
-    suffix += num.suffix-suffix;
-    fixNumber();
+    if(num.suffix < suffix){
+      size -= pow(10, (num.suffix-suffix)*3);
+      fixNumber();
+    }
+    else{
+      size -= num.size;
+      fixNumber();
+    }
   }
-  void Multiply(Number num){
+  void Multiply(Number num) {
     size *= num.size*pow(10, num.suffix);
     fixNumber();
   }
-  void changeTo(Number num){
+  void changeTo(Number num) {
     size = num.size;
     suffix = num.suffix;
   }
   //Disse funktioner returner et tal
   Number returnAdd(Number num) {
     Number copy = new Number(size, suffix);
-    copy.size /= pow(10, (num.suffix-suffix)*3);
-    copy.size -= num.size;
-    copy.suffix += num.suffix-suffix;
-    copy.fixNumber();
+    if (num.suffix > suffix) {
+      if (pow(10, (num.suffix-suffix)*3) > 0) {
+        copy.size /= pow(10, (num.suffix-suffix)*3);
+      } else {
+        copy.size = 0;
+      }
+      copy.size += num.size;
+      copy.suffix += num.suffix-suffix;
+    }
+    else if(num.suffix < suffix){
+      copy.size += pow(10, (num.suffix-suffix)*3);
+      fixNumber();
+    }
+    else{
+      copy.size += num.size;
+      fixNumber();
+    }
     return copy;
   }
   Number returnSubtract(Number num) {
     Number copy = new Number(size, suffix);
-    copy.size /= pow(10, (num.suffix-suffix)*3);
-    copy.size -= num.size;
-    copy.suffix += num.suffix-suffix;
-    copy.fixNumber();
+    if(num.suffix < suffix){
+      copy.size -= pow(10, (num.suffix-suffix)*3);
+      fixNumber();
+    }
+    else{
+      copy.size -= num.size;
+      fixNumber();
+    }
     return copy;
   }
-  Number returnMultiply(Number num){
+  Number returnMultiply(Number num) {
     Number copy = new Number(size, suffix);
     copy.size *= num.size*pow(10, num.suffix);
     copy.fixNumber();
@@ -81,17 +115,15 @@ class Number {
     }
     if (c != 0) {
       text = Double.toString(roundDouble(size, c));
-      println(text.length());
-      if(text.length() == 3 && c == 2){
+      if (text.length() == 3 && c == 2) {
         text += "0";
       }
     } else {
       text = str((int)size);
     }
-    if(suffix < suffixes.length){
+    if (suffix < suffixes.length) {
       text += suffixes[suffix];
-    }
-    else{
+    } else {
       text = "VERY BIG NUMBER";
     }
     return text;
