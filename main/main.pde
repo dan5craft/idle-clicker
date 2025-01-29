@@ -4,7 +4,7 @@ ControlP5 cp5;
 
 Clicker clicker;
 
-double money = 5;
+double money = 0;
 
 color knapFarve = color(100,100,100);
 color knapHoverFarve = color(200,200,200);
