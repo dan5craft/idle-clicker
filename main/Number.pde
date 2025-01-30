@@ -124,7 +124,7 @@ class Number {
     if (suffix < suffixes.length) {
       text += suffixes[suffix];
     } else {
-      text = "VERY BIG NUMBER";
+      text = "Infinity";
     }
     return text;
   }
