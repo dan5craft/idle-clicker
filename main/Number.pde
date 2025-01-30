@@ -34,7 +34,7 @@ class Number {
     }
   }
   void Subtract(Number num) {
-    if(num.suffix > suffix || num.size > suffix && num.suffix == suffix){
+    if(num.suffix > suffix || num.size > size && num.suffix == suffix){
       size = 0;
       suffix = 0;
     }
@@ -72,7 +72,7 @@ class Number {
   }
   Number returnSubtract(Number num) {
     Number copy = new Number(size, suffix);
-    if(num.suffix > suffix || num.size > suffix && num.suffix == suffix){
+    if(num.suffix > suffix || num.size > size && num.suffix == suffix){
       copy.size = 0;
       copy.suffix = 0;
     }
