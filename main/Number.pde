@@ -28,27 +28,24 @@ class Number {
       size += num.size;
       suffix += num.suffix-suffix;
     }
-    else if(num.suffix < suffix){
-      size += num.size*pow(10, (num.suffix-suffix)*3);
-      fixNumber();
-    }
     else{
-      size += num.size;
+      size += num.size*pow(10, (num.suffix-suffix)*3);
       fixNumber();
     }
   }
   void Subtract(Number num) {
-    if(num.suffix < suffix){
-      size -= num.size*pow(10, (num.suffix-suffix)*3);
-      fixNumber();
+    if(num.suffix > suffix || num.size > suffix && num.suffix == suffix){
+      size = 0;
+      suffix = 0;
     }
     else{
-      size -= num.size;
+      size -= num.size*pow(10, (num.suffix-suffix)*3);
       fixNumber();
     }
   }
   void Multiply(Number num) {
-    size *= num.size*pow(10, num.suffix);
+    size *= num.size;
+    suffix += num.suffix;
     fixNumber();
   }
   void changeTo(Number num) {
@@ -67,31 +64,28 @@ class Number {
       copy.size += num.size;
       copy.suffix += num.suffix-suffix;
     }
-    else if(num.suffix < suffix){
-      copy.size += num.size*pow(10, (num.suffix-suffix)*3);
-      fixNumber();
-    }
     else{
-      copy.size += num.size;
+      copy.size += num.size*pow(10, (num.suffix-suffix)*3);
       fixNumber();
     }
     return copy;
   }
   Number returnSubtract(Number num) {
     Number copy = new Number(size, suffix);
-    if(num.suffix < suffix){
-      copy.size -= num.size*pow(10, (num.suffix-suffix)*3);
-      fixNumber();
+    if(num.suffix > suffix || num.size > suffix && num.suffix == suffix){
+      copy.size = 0;
+      copy.suffix = 0;
     }
     else{
-      copy.size -= num.size;
+      copy.size -= num.size*pow(10, (num.suffix-suffix)*3);
       fixNumber();
     }
     return copy;
   }
   Number returnMultiply(Number num) {
     Number copy = new Number(size, suffix);
-    copy.size *= num.size*pow(10, num.suffix);
+    copy.size *= num.size;
+    copy.suffix += num.suffix;
     copy.fixNumber();
     return copy;
   }
