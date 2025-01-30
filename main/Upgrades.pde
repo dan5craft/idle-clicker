@@ -51,7 +51,7 @@ class ClickUpgrade {
     if (money.isBiggerOrEqualTo(price)) {
       clickPower.Add(increase);
       money.Subtract(price);
-      price.Multiply(new Number(1.5, 0));
+      price.Multiply(new Number(1.1, 0));
     }
   }
 }
