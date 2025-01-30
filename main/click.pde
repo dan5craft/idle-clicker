@@ -1,6 +1,11 @@
 void mousePressed() {
   if (sqrt(pow(mouseX-(clicker.getX()+clicker.getSizeX()/2), 2)+pow(mouseY-(clicker.getY()+clicker.getSizeY()/2), 2)) <= clicker.currentSizeX/2) {
     clicking();
+    
+    for (int i = 0; i < 5; i++) {
+      partikler.add(new Energi(mouseX, mouseY));
+    }
+    
   }
   if (skærm == "hovedside") {
     for (int i=0; i<clickUpgrades.size(); i++) {
