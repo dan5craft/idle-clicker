@@ -8,7 +8,7 @@ String[] suffixes = {"", " Thousand", " Million", " Billion", " Trillion", " Qua
 
 Number money = new Number(0, 0);
 
-Number mps = new Number(0.1, 0);
+Number mps = new Number(0, 0);
 Number clickPower = new Number(1, 0);
 
 color knapFarve = color(100,100,100);
