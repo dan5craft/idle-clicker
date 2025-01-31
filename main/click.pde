@@ -1,5 +1,5 @@
 void mousePressed() {
-  if (sqrt(pow(mouseX-(clicker.getX()+clicker.getSizeX()/2), 2)+pow(mouseY-(clicker.getY()+clicker.getSizeY()/2), 2)) <= clicker.currentSize/2) {
+  if (sqrt(pow(mouseX-(clicker.getX()+clicker.getSizeX()), 2)+pow(mouseY-(clicker.getY()+clicker.getSizeY()/2), 2)) <= clicker.currentSize/2) {
     clicking();
     
     for (int i = 0; i < 5; i++) {

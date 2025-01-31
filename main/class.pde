@@ -47,7 +47,7 @@ class Clicker {
 
   void tegnBoks() {
     fill(255);
-    rect(x, y, sizeX, sizeY);
+    //rect(x, y, width/3,height/3*2);
   }
   void tegnCirkel() {
     fill(0);
