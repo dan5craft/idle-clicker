@@ -24,7 +24,7 @@ class ClickUpgrade {
     clickUpgrades.add(this);
   }
   void tegnKnap() {
-    tekst = titel+"\n"+price.string();
+    tekst = titel+" +"+increase.string()+"\n"+price.string();
     if (musOver()) {
       if (mousePressed) {
         fill(klikFarve);

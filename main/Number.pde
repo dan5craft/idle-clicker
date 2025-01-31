@@ -20,25 +20,19 @@ class Number {
   //Disse funktioner ændrer tallet
   void Add(Number num) {
     if (num.suffix > suffix) {
-      if (pow(10, (num.suffix-suffix)*3) > 0) {
-        size /= pow(10, (num.suffix-suffix)*3);
-      } else {
-        size = 0;
-      }
+      size /= pow(10, (num.suffix-suffix)*3);
       size += num.size;
       suffix += num.suffix-suffix;
-    }
-    else{
+    } else {
       size += num.size*pow(10, (num.suffix-suffix)*3);
       fixNumber();
     }
   }
   void Subtract(Number num) {
-    if(num.suffix > suffix || num.size > size && num.suffix == suffix){
+    if (num.suffix > suffix || num.size > size && num.suffix == suffix) {
       size = 0;
       suffix = 0;
-    }
-    else{
+    } else {
       size -= num.size*pow(10, (num.suffix-suffix)*3);
       fixNumber();
     }
@@ -56,15 +50,10 @@ class Number {
   Number returnAdd(Number num) {
     Number copy = new Number(size, suffix);
     if (num.suffix > suffix) {
-      if (pow(10, (num.suffix-suffix)*3) > 0) {
-        copy.size /= pow(10, (num.suffix-suffix)*3);
-      } else {
-        copy.size = 0;
-      }
+      copy.size /= pow(10, (num.suffix-suffix)*3);
       copy.size += num.size;
       copy.suffix += num.suffix-suffix;
-    }
-    else{
+    } else {
       copy.size += num.size*pow(10, (num.suffix-suffix)*3);
       fixNumber();
     }
@@ -72,11 +61,10 @@ class Number {
   }
   Number returnSubtract(Number num) {
     Number copy = new Number(size, suffix);
-    if(num.suffix > suffix || num.size > size && num.suffix == suffix){
+    if (num.suffix > suffix || num.size > size && num.suffix == suffix) {
       copy.size = 0;
       copy.suffix = 0;
-    }
-    else{
+    } else {
       copy.size -= num.size*pow(10, (num.suffix-suffix)*3);
       fixNumber();
     }
