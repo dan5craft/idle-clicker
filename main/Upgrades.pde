@@ -56,9 +56,9 @@ class ClickUpgrade {
       clickPower.Add(increase);
       money.Subtract(price);
       price.Multiply(new Number(1.1, 0));
-      float radius = ringSize * width/60 + width/20;
+      float radius = ringSize * width/60 + width/30;
       float speed = random(0.005, 0.01);
-      color ballColor = color(random(255), random(255), random(255));
+      color ballColor = color(0,0, 150);
       balls.add(new Electron(clicker.getX()+clicker.getSizeX(),clicker.getY()+clicker.getSizeY()/2, radius, speed, ballColor));
     }
   }

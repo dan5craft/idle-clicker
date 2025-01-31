@@ -51,7 +51,7 @@ void draw(){
   clicker.tegnBoks();
   noFill();
   stroke(0);
-  for(int i = 0; i < 9; i++){
+  for(int i = 0; i < 8; i++){
     circle(clicker.getX()+clicker.getSizeX(),clicker.getY()+clicker.getSizeY()/2, (i * width/60 + width/20)*2);
   }
   noStroke();
