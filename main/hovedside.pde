@@ -13,7 +13,7 @@ void hovedside() {
   textAlign(CENTER);
   //text(money,width/2,height/8);
   text(money.string(), width/2, height/8);
-  text("click power: "+clickPower.string(),width/5*4-width/30,height/8);
+  text("Click power: "+clickPower.string(),width/5*4-width/30,height/8);
 }
 
 void opretKnapper() {

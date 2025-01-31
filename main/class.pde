@@ -34,19 +34,19 @@ class Clicker{
   
   void tegnBoks(){
     fill(255);
-    rect(x, y, sizeX, sizeY);
+    //rect(x, y, width/3,height/3*2);
   }
   void tegnCirkel(){
     fill(0);
     float cirkelSizeX = sizeX * 0.75;
     float cirkelSizeY = sizeY * 0.75;
-    if (sqrt(pow(mouseX-(x+sizeX/2), 2)+pow(mouseY-(y+sizeY/2), 2)) <= currentSizeX/2) {
+    if (sqrt(pow(mouseX-(x+sizeX), 2)+pow(mouseY-(y+sizeY/2), 2)) <= currentSizeX/2) {
       currentSizeX = lerp(currentSizeX,cirkelSizeX*1.1,0.1);
       currentSizeY = lerp(currentSizeY,cirkelSizeY*1.1,0.1);
     } else {
       currentSizeX = lerp(currentSizeX,cirkelSizeX,0.1);
       currentSizeY = lerp(currentSizeY,cirkelSizeY,0.1);
     }
-    circle(x + sizeX/2, y + sizeY/2, currentSizeX);
+    circle(x + sizeX, y + sizeY/2, currentSizeX);
   }
 }
