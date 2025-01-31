@@ -29,11 +29,11 @@ void setup(){
   cp5 = new ControlP5(this);
   font = createFont("Arial",width/50);
   partikler = new ArrayList<>();
-  ClickUpgrade clickUpgrade1 = new ClickUpgrade(new Number(1, 0), new Number(1, 0), width/16 + width/50, height/5 + height/50, width/3 - width/25, height/13, "Upgrade 1", font, color(255), knapFarve, knapHoverFarve, knapFarve);
-  ClickUpgrade clickUpgrade2 = new ClickUpgrade(new Number(100, 0), new Number(5, 0), width/16 + width/50, height/5 + height/10 + height/50, width/3 - width/25, height/13, "Upgrade 2", font, color(255), knapFarve, knapHoverFarve, knapFarve);
-  ClickUpgrade clickUpgrade3 = new ClickUpgrade(new Number(1, 1), new Number(25, 0), width/16 + width/50, height/5 + height/10*2 + height/50, width/3 - width/25, height/13, "Upgrade 3", font, color(255), knapFarve, knapHoverFarve, knapFarve);
-  ClickUpgrade clickUpgrade4 = new ClickUpgrade(new Number(100, 1), new Number(100, 0), width/16 + width/50, height/5 + height/10*3 + height/50, width/3 - width/25, height/13, "Upgrade 4", font, color(255), knapFarve, knapHoverFarve, knapFarve);
-  ClickUpgrade clickUpgrade5 = new ClickUpgrade(new Number(1, 2), new Number(1, 1), width/16 + width/50, height/5 + height/10*4 + height/50, width/3 - width/25, height/13, "Upgrade 5", font, color(255), knapFarve, knapHoverFarve, knapFarve);
+  ClickUpgrade clickUpgrade1 = new ClickUpgrade(new Number(1, 0), new Number(1, 0), width/16 + width/50, height/5 + height/50, width/3 - width/25, height/13, "Upgrade 1: +1.00", font, color(255), knapFarve, knapHoverFarve, knapFarve);
+  ClickUpgrade clickUpgrade2 = new ClickUpgrade(new Number(100, 0), new Number(5, 0), width/16 + width/50, height/5 + height/10 + height/50, width/3 - width/25, height/13, "Upgrade 2: +5.00", font, color(255), knapFarve, knapHoverFarve, knapFarve);
+  ClickUpgrade clickUpgrade3 = new ClickUpgrade(new Number(1, 1), new Number(25, 0), width/16 + width/50, height/5 + height/10*2 + height/50, width/3 - width/25, height/13, "Upgrade 3: +25.0", font, color(255), knapFarve, knapHoverFarve, knapFarve);
+  ClickUpgrade clickUpgrade4 = new ClickUpgrade(new Number(100, 1), new Number(100, 0), width/16 + width/50, height/5 + height/10*3 + height/50, width/3 - width/25, height/13, "Upgrade 4: +100", font, color(255), knapFarve, knapHoverFarve, knapFarve);
+  ClickUpgrade clickUpgrade5 = new ClickUpgrade(new Number(1, 2), new Number(1, 1), width/16 + width/50, height/5 + height/10*4 + height/50, width/3 - width/25, height/13, "Upgrade 5: +1.00 Thousand", font, color(255), knapFarve, knapHoverFarve, knapFarve);
   skærm = "hovedside";
   defaultValues();
   opretKnapper();
