@@ -1,19 +1,25 @@
 Button upgrade1, upgrade2, upgrade3, upgrade4, upgrade5;
 
+
 int upgrade1num, upgrade2num, upgrade3num, upgrade4num, upgrade5num;
 
 void hovedside() {
   fill(255);
-  rect(width/16, height/5, width/3, height/3*2);
+  rect(width/16, height/9, width/3, height/8*7);
   for (int i=0; i<clickUpgrades.size(); i++) {
     ClickUpgrade upgrade = clickUpgrades.get(i);
     upgrade.tegnKnap();
+  }
+  for (int i=0; i<Knapper.size(); i++) {
+    Knap knap = Knapper.get(i);
+    knap.tegnKnap();
   }
   textSize(50);
   textAlign(CENTER);
   //text(money,width/2,height/8);
   text(money.string(), width/2, height/8);
   text("Click power: "+clickPower.string(),width/5*4-width/30,height/8);
+  
 }
 
 void opretKnapper() {

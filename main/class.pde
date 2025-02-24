@@ -56,6 +56,8 @@ class Clicker {
     } else {
       currentSize = lerp(currentSize, cirkelSize, 0.1);
     }
-    //circle(x + sizeX, y + sizeY/2, currentSize);
+    if(startKøbt){
+      circle(x + sizeX, y + sizeY/2, currentSize);
+    }
   }
 }

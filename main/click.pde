@@ -14,6 +14,12 @@ void mousePressed() {
         upgrade.buy();
       }
     }
+    for (int i=0; i<Knapper.size(); i++) {
+      Knap knap = Knapper.get(i);
+      if (knap.musOver()) {
+        knap.buy();
+      }
+    }
   }
 }
 
