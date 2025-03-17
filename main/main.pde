@@ -36,7 +36,8 @@ String upgradeTab = "Neutron";
 boolean startKøbt = false;
 
 Number effectiveness = new Number(1,0);
-int effectivenessNum = 100;
+float effectivenessNum = 1;
+float test;
 
 void setup(){
   fullScreen();
@@ -87,10 +88,27 @@ void draw(){
   Number deltaNumber = new Number(delta, 0);
   //tilføjer money per sekund (MPS) til money ganget med sekunder selvfølgelig
   money.Add(mps.returnMultiply(deltaNumber));
-  background(202, 112, 20);
+  //background(202, 112, 20);
+  for(int i = 0; i < stars.size(); i++){
+    if(stars.get(i).getX() >= width){
+      stars.remove(i);
+    }
+    else if(stars.get(i).getY() >= height){
+      stars.remove(i);
+    }
+  }
+  background(0);
+  for (BackgroundMaker star : stars) {
+    star.drawBackground();
+    star.move();
+  }
+    for(int i = stars.size(); i < 100; i++){
+    new BackgroundMaker(random(-width*2, 0), random(-height*2, 0), random(3,5), 1);
+  }
+  
   clicker.tegnBoks();
   noFill();
-  stroke(0);
+  stroke(255);
   
   for(int i = 0; i < numberOfRings; i++){
     circle(width/5*4, height/2, (i * width/60 + width/20)*2);
@@ -101,6 +119,8 @@ void draw(){
     fill(colors.get(i), 150); // Color with transparency
     circle(circles.get(i).x, circles.get(i).y, width/40);
   }
+  
+  
   
   noStroke();
   clicker.tegnCirkel();
@@ -120,8 +140,15 @@ void draw(){
     hovedside();
   }
   if(abs(numberOfNeutron-numberOfProton)>=5){
-    effectivenessNum = ((100-(abs(numberOfNeutron-numberOfProton)-4)*10)/100);
-    effectiveness = new Number(effectivenessNum, 0);
+    if(effectivenessNum > 0){
+      effectivenessNum = 1-(abs(numberOfNeutron-numberOfProton)/10.0);
+      effectivenessNum = effectivenessNum * 1.8;
+      effectiveness = new Number(effectivenessNum, 0);
+    }
+  }
+  else{
+    effectivenessNum = 1;
+    effectiveness = new Number(1, 0);
   }
 }
 

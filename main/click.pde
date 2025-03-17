@@ -25,7 +25,6 @@ void mousePressed() {
 
 void clicking() {
   clickPowerAdd = clickPower.returnMultiply(effectiveness);
-  println(clickPowerAdd.string());
   money.Add(clickPowerAdd);//.returnMultiply(new Number(1+(1-clicker.currentSize/(clicker.cirkelSize*1.1))*9, 0)));
   clicker.currentSize *= 0.9;
   clicker.multi = 1+ upgrade1num + upgrade2num * 2 + upgrade3num * 5 + upgrade4num * 10 + upgrade5num * 50;
