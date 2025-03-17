@@ -62,12 +62,13 @@ class ClickUpgrade {
           mps.Add(increase);
           money.Subtract(price);
           price.Multiply(new Number(1.1, 0));
+          numberOfElectron++;
           float radius = ringSize * width/60 + width/30;
           float speed = random(0.005, 0.01);
           color ballColor = color(0,0, 150);
           if(ringSize > numberOfRings) {numberOfRings = ringSize;}
-          balls.add(new Electron(clicker.getX()+clicker.getSizeX(),clicker.getY()+clicker.getSizeY()/2, radius, speed, ballColor));
-          println(mps.string());
+          balls.add(new Electron(width/5*4, height/2, radius, speed, ballColor));
+          //println(mps.string());
         }
       }
     }
@@ -77,9 +78,21 @@ class ClickUpgrade {
           clickPower.Add(increase);
           money.Subtract(price);
           price.Multiply(new Number(1.1, 0));
+          addCircle(neutronColor);
+          numberOfNeutron++;
           if(startKøbt == false){
             startKøbt = true;
           }
+        }
+      }
+    }
+    if(upgradeTab == "Proton"){
+      if(type == "Neutron"){
+        if (money.isBiggerOrEqualTo(price)) {
+          money.Subtract(price);
+          price.Multiply(new Number(1.1, 0));
+          addCircle(protonColor);
+          numberOfProton++;
         }
       }
     }

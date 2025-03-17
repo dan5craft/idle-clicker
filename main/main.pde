@@ -10,10 +10,15 @@ Number money = new Number(1, 0);
 
 Number mps = new Number(0, 0);
 Number clickPower = new Number(1, 0);
+Number clickPowerAdd = clickPower;
 
 color knapFarve = color(100,100,100);
 color knapHoverFarve = color(200,200,200);
 color knapKlikFarve = color(50, 50, 50);
+
+int numberOfElectron;
+int numberOfNeutron;
+int numberOfProton;
 
 String skærm;
 
@@ -30,11 +35,18 @@ String upgradeTab = "Neutron";
 
 boolean startKøbt = false;
 
+Number effectiveness = new Number(1,0);
+int effectivenessNum = 100;
+
 void setup(){
   fullScreen();
   cp5 = new ControlP5(this);
   font = createFont("Arial",width/50);
   partikler = new ArrayList<>();
+  circles = new ArrayList<PVector>();
+  originalPositions = new ArrayList<PVector>();
+  colors = new ArrayList<Integer>();
+  drawOrder = new ArrayList<Integer>();
   Knap neutronKnap = new Knap(width/16, height/7 - height/9, width/9, height/13, "Neutron", font, color(255), knapFarve, knapHoverFarve, knapFarve);
   Knap electronKnap = new Knap(width/16 + width/9, height/7 - height/9, width/9, height/13, "Electron", font, color(255), knapFarve, knapHoverFarve, knapFarve);
   Knap ProtonKnap = new Knap(width/16+ width/9*2, height/7 - height/9, width/9, height/13, "Proton", font, color(255), knapFarve, knapHoverFarve, knapFarve);
@@ -65,7 +77,7 @@ void setup(){
   skærm = "hovedside";
   defaultValues();
   opretKnapper();
-  clicker = new Clicker(width/5*3,height/5,width/7,height/7*4,1,1,"default");
+  clicker = new Clicker(width/5*4,height/2,width/7,height/7*4,1,1,"default");
 }
 
 void draw(){
@@ -79,9 +91,17 @@ void draw(){
   clicker.tegnBoks();
   noFill();
   stroke(0);
+  
   for(int i = 0; i < numberOfRings; i++){
-    circle(clicker.getX()+clicker.getSizeX(),clicker.getY()+clicker.getSizeY()/2, (i * width/60 + width/20)*2);
+    circle(width/5*4, height/2, (i * width/60 + width/20)*2);
   }
+  
+  noStroke();
+  for (int i : drawOrder) {
+    fill(colors.get(i), 150); // Color with transparency
+    circle(circles.get(i).x, circles.get(i).y, width/40);
+  }
+  
   noStroke();
   clicker.tegnCirkel();
   for (int i = partikler.size() - 1; i >= 0; i--) {
@@ -98,6 +118,10 @@ void draw(){
   }
   if(skærm == "hovedside"){
     hovedside();
+  }
+  if(abs(numberOfNeutron-numberOfProton)>=5){
+    effectivenessNum = ((100-(abs(numberOfNeutron-numberOfProton)-4)*10)/100);
+    effectiveness = new Number(effectivenessNum, 0);
   }
 }
 

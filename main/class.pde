@@ -51,13 +51,8 @@ class Clicker {
   }
   void tegnCirkel() {
     fill(0);
-    if (sqrt(pow(mouseX-(x+sizeX), 2)+pow(mouseY-(y+sizeY/2), 2)) <= currentSize/2) {
-      currentSize = lerp(currentSize, cirkelSize*1.1, 0.1);
-    } else {
-      currentSize = lerp(currentSize, cirkelSize, 0.1);
-    }
     if(startKøbt){
-      circle(x + sizeX, y + sizeY/2, currentSize);
+      //circle(x + sizeX, y + sizeY/2, currentSize);
     }
   }
 }

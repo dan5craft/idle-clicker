@@ -19,6 +19,8 @@ void hovedside() {
   //text(money,width/2,height/8);
   text(money.string(), width/2, height/8);
   text("Click power: "+clickPower.string(),width/5*4-width/30,height/8);
+  text("Neutrons: "+numberOfNeutron+" Electron: "+numberOfElectron+" Proton: "+numberOfProton,width/5*4-width/30,height/8+50);
+  text("Click power: "+effectiveness,width/5*4-width/30,height/8+100);
   
 }
 
