@@ -87,7 +87,7 @@ class ClickUpgrade {
       }
     }
     if(upgradeTab == "Proton"){
-      if(type == "Neutron"){
+      if(type == "Proton"){
         if (money.isBiggerOrEqualTo(price)) {
           money.Subtract(price);
           price.Multiply(new Number(1.1, 0));

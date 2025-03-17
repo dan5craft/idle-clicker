@@ -21,7 +21,31 @@ void hovedside() {
   text("Click power: "+clickPower.string(),width/5*4-width/30,height/8);
   text("Neutrons: "+numberOfNeutron+" Electron: "+numberOfElectron+" Proton: "+numberOfProton,width/5*4-width/30,height/8+50);
   text("Effectiveness: "+round(effectivenessNum*100)+"%",width/5*4-width/30,height/8+100);
+  if(numberOfProton <= 118){
+    text("Element: "+elements[numberOfProton],width/5*4-width/30,height/8+150);
+  }
+  else{
+    String elementName = generateElementName(numberOfProton);
+    text("Element: "+elementName,width/5*4-width/30,height/8+150);
+  }
+}
+
+String generateElementName(int atomicNumber) {
+  String[] numberRoots = {"nil", "un", "bi", "tri", "quad", "pent", "hex", "sept", "oct", "enn"};
+  String atomicString = str(atomicNumber);
+  String name = "";
   
+  for (int i = 0; i < atomicString.length(); i++) {
+    int digit = int(atomicString.substring(i, i + 1));
+    name += numberRoots[digit];
+  }
+  
+  return capitalize(name) + "ium";
+}
+
+// Gør første bogstav stort
+String capitalize(String s) {
+  return s.substring(0,1).toUpperCase() + s.substring(1);
 }
 
 void opretKnapper() {

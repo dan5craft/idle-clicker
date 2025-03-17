@@ -6,6 +6,25 @@ Clicker clicker;
 
 String[] suffixes = {"", " Thousand", " Million", " Billion", " Trillion", " Quadrillion", " Quintillion", " Sextillion", " Septillion", " Octillion", " Nonillion", " Decillion", " Undecillion", " Duodecillion", " Tredecillion", " Quattuordecillion", " Quindecillion", " Sexdecillion", " Septendecillion", " Octodecillion", " Novemdecillion", " Vigintillion", " Unvigintillion", " Duovigintillion", " Trevigintillion"};
 
+String[] elements = {
+  "", "Hydrogen", "Helium", "Lithium", "Beryllium", "Boron", "Carbon", "Nitrogen", "Oxygen", "Fluorine", "Neon",
+  "Sodium", "Magnesium", "Aluminium", "Silicon", "Phosphorus", "Sulfur", "Chlorine", "Argon",
+  "Potassium", "Calcium", "Scandium", "Titanium", "Vanadium", "Chromium", "Manganese", "Iron", "Cobalt", "Nickel", "Copper", "Zinc",
+  "Gallium", "Germanium", "Arsenic", "Selenium", "Bromine", "Krypton",
+  "Rubidium", "Strontium", "Yttrium", "Zirconium", "Niobium", "Molybdenum", "Technetium", "Ruthenium", "Rhodium", "Palladium",
+  "Silver", "Cadmium", "Indium", "Tin", "Antimony", "Tellurium", "Iodine", "Xenon",
+  "Cesium", "Barium", "Lanthanum", "Cerium", "Praseodymium", "Neodymium", "Promethium", "Samarium", "Europium", "Gadolinium",
+  "Terbium", "Dysprosium", "Holmium", "Erbium", "Thulium", "Ytterbium", "Lutetium",
+  "Hafnium", "Tantalum", "Tungsten", "Rhenium", "Osmium", "Iridium", "Platinum", "Gold", "Mercury", "Thallium",
+  "Lead", "Bismuth", "Polonium", "Astatine", "Radon",
+  "Francium", "Radium", "Actinium", "Thorium", "Protactinium", "Uranium", "Neptunium", "Plutonium", "Americium", "Curium",
+  "Berkelium", "Californium", "Einsteinium", "Fermium", "Mendelevium", "Nobelium", "Lawrencium",
+  "Rutherfordium", "Dubnium", "Seaborgium", "Bohrium", "Hassium", "Meitnerium", "Darmstadtium", "Roentgenium", "Copernicium",
+  "Nihonium", "Flerovium", "Moscovium", "Livermorium", "Tennessine", "Oganesson",
+};
+
+
+
 Number money = new Number(1, 0);
 
 Number mps = new Number(0, 0);
@@ -17,8 +36,8 @@ color knapHoverFarve = color(200,200,200);
 color knapKlikFarve = color(50, 50, 50);
 
 int numberOfElectron;
-int numberOfNeutron;
-int numberOfProton;
+int numberOfNeutron=117;
+int numberOfProton=117;
 
 String skærm;
 
